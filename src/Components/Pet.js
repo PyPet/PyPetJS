@@ -7,9 +7,8 @@ import Divider from "@material-ui/core/Divider";
 import Database from "./DataBase"
 function _Config() {
   try {
-    data = Database().getPetConfig();
-    print()
-    return "error"
+    var data, error= Database().getPetConfig();
+    return data;
   } catch (e) {
     console.error(e.toString());
     return "error";

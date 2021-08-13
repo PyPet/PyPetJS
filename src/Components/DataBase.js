@@ -12,7 +12,6 @@ function Database(petid = process.env.petid) {
       .from("pets")
       .select()
       .textSearch("id", petid);
-    print(data);
     return { data, error };
   }
 }
