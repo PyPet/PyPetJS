@@ -4,11 +4,12 @@ import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-const yaml = require("yaml");
+import Database from "./DataBase"
 function _Config() {
   try {
-    let fileFetch = fs.readFileSync("../configFiles/pet1.yaml", "utf8")
-    return yaml.safeLoad(fileFetch);
+    data = Database().getPetConfig();
+    print()
+    return "error"
   } catch (e) {
     console.error(e.toString());
     return "error";
@@ -17,7 +18,7 @@ function _Config() {
 function getConfigKey(key) {
   try {
     console.log(_Config());
-    return _Config()[key];
+    return _Config();
   } catch (e) {
     console.error(e.toString());
     return "error";
