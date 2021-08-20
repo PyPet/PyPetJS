@@ -1,13 +1,18 @@
 import "./Pet.css";
-import dog1 from "../configFiles/Textures/dog1.png";
+
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
-import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-import Database from "./DataBase"
+import Grid from "@material-ui/core/Grid";
+
+import dog1 from "../configFiles/Textures/dog1.png";
+
+import Database from "./DataBase";
+
 function _Config() {
   try {
-    var data, error= Database().getPetConfig();
+    var data,
+      error = Database().getPetConfig();
     return data;
   } catch (e) {
     console.error(e.toString());
@@ -21,9 +26,10 @@ function getConfigKey(key) {
   } catch (e) {
     console.error(e.toString());
     return "error";
-  }}
+  }
+}
 function ComponentPet(pet) {
-   /* {} */
+  /* {} */
   return (
     <div className="Pet">
       <Grid
@@ -32,6 +38,7 @@ function ComponentPet(pet) {
         justifyContent="center"
         alignItems="center"
       >
+        {" "}
         <Grid item xs={4}>
           <center>
             <section id="Pet__Photo">
@@ -51,11 +58,12 @@ function ComponentPet(pet) {
                 Nombre: <span id="Pet__Data__Name">{getConfigKey("name")}</span>
               </h2>
               <h3>
-                Peso: <span id="Pet__Data__Weight">10</span> KiloGramos
+                Peso: <span id="Pet__Data__Weight">10</span>
+                KiloGramos
               </h3>
               <h3>
-                Felicidad: <span id="Pet__Data__Happiness">100</span> Agites de
-                cola (Por Minuto)
+                Felicidad: <span id="Pet__Data__Happiness">100</span>
+                Agites de cola(Por Minuto)
               </h3>
             </section>
           </center>
