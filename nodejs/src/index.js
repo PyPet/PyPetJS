@@ -2,15 +2,15 @@ import "./index.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import {Typewriter} from "react-simple-typewriter";
+import { Typewriter } from "react-simple-typewriter";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 var testing = 2500;
 const styleBG = {
-  color : "#ecf0f1",
-  backgroundColor : "#2c3e50"
+  color: "#ecf0f1",
+  backgroundColor: "#2c3e50",
 };
 function unHide() {
   document.getElementsByClassName("AppHidden")[0].className = "App";
@@ -20,14 +20,14 @@ ReactDOM.render(
   <React.StrictMode style={styleBG}>
     <div className="typewriter1">
       <Typewriter
-words = {["Bienvenid@, ¡Iniciando sistema!", "¡Iniciado!", ""]} loop = {
-    1} cursor
-cursorStyle = "_"
+        words={["Bienvenid@, ¡Iniciando sistema!", "¡Iniciado!", ""]}
+        loop={1}
+        cursor
+        cursorStyle="_"
         typeSpeed={100 - testing}
         deleteSpeed={70 - testing}
         delaySpeed={5000 - testing - testing}
-        onLoopDone={
-  unHide}
+        onLoopDone={unHide}
       />
     </div>
     <div className="AppHidden">
@@ -37,8 +37,8 @@ cursorStyle = "_"
   document.getElementById("root")
 );
 
-        // If you want to start measuring performance in your app, pass a
-        // function to log results (for example: reportWebVitals(console.log))
-        // or send to an analytics endpoint. Learn more:
-        // https://bit.ly/CRA-vitals
-        reportWebVitals();
+// If you want to start measuring performance in your app, pass a
+// function to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more:
+// https://bit.ly/CRA-vitals
+reportWebVitals();
