@@ -11,8 +11,7 @@ import Database from "./DataBase";
 
 function _Config() {
   try {
-    var data,
-      error = Database().getPetConfig();
+    var data = Database().getPetConfig();
     return data;
   } catch (e) {
     console.error(e.toString());
