@@ -1,4 +1,4 @@
-version: '2.1'
+version: "2.1"
 volumes:
   settings:
 services:
@@ -9,7 +9,7 @@ services:
     image: arm64v8/mongo
     restart: always
     volumes:
-      - 'mongo-data:/data/db'
+      - "mongo-data:/data/db"
     expose:
       - "27017"
   react:
@@ -24,7 +24,7 @@ services:
     network_mode: host
     privileged: true
     volumes:
-      - 'settings:/data'
+      - "settings:/data"
     ports:
-      - '5011' # management API (optional)
-      - '35173' # Chromium debugging port (optional)
+      - "5011" # management API (optional)
+      - "35173" # Chromium debugging port (optional)
