@@ -1,0 +1,3 @@
+# Instalar Nuevo Driver
+
+curl -o- https://raw.githubusercontent.com/PyPet/rpi-lcd-show-improved/main/install | path_root=/ path_root_boot=/mnt/boot bash /dev/stdin tft35a

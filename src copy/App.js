@@ -1,9 +1,11 @@
 import "./App.css";
 import Pet from "./Components/Pet.js";
+
+let client = createClient(supabaseUrl, supabaseAnonKey)
 function App() {
   return (
     <div className="App">
-      <Pet pet="pet1" />
+      <Pet/>
     </div>
   );
 }

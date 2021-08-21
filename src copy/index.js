@@ -6,6 +6,10 @@ import reportWebVitals from "./reportWebVitals";
 import { Typewriter } from "react-simple-typewriter";
 var testing = 2500;
 const styleBG = { color: "#ecf0f1", backgroundColor: "#2c3e50" };
+function unHide(){
+  document.getElementsByClassName("AppHidden")[0].className = "App";
+  document.getElementsByClassName("typewriter1")[0].innerHTML = "";
+}
 ReactDOM.render(
   <React.StrictMode style={styleBG}>
     <div className="typewriter1">
@@ -17,10 +21,7 @@ ReactDOM.render(
         typeSpeed={100 - testing}
         deleteSpeed={70 - testing}
         delaySpeed={5000 - testing - testing}
-        onLoopDone={() => {
-          document.getElementsByClassName("AppHidden")[0].className = "App";
-          document.getElementsByClassName("typewriter1")[0].innerHTML = "";
-        }}
+        onLoopDone={unHide}
       />
     </div>
     <div className="AppHidden">

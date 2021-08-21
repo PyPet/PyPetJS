@@ -1,0 +1,30 @@
+version: '2.1'
+volumes:
+  settings:
+services:
+  fbcp:
+    image: balenablocks/fbcp:raspberrypi3
+    privileged: true
+  mongo:
+    image: arm64v8/mongo
+    restart: always
+    volumes:
+      - 'settings:/data/db'
+    expose:
+      - "27017"
+  react:
+    depends_on:
+      - mongo
+    build: ./node
+    ports:
+      - "80:80"
+  browser:
+    restart: always
+    image: balenablocks/browser:raspberrypi3
+    network_mode: host
+    privileged: true
+    volumes:
+      - 'settings:/data'
+    ports:
+      - '5011' # management API (optional)
+      - '35173' # Chromium debugging port (optional)

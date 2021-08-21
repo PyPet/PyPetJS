@@ -1,29 +1,15 @@
 import "./Pet.css";
-import dog1 from "../configFiles/Textures/dog1.png";
+
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
-import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-const yaml = require("yaml");
-function _Config() {
-  try {
-    let fileFetch = fs.readFileSync("../configFiles/pet1.yaml", "utf8")
-    return yaml.safeLoad(fileFetch);
-  } catch (e) {
-    console.error(e.toString());
-    return "error";
-  }
-}
-function getConfigKey(key) {
-  try {
-    console.log(_Config());
-    return _Config()[key];
-  } catch (e) {
-    console.error(e.toString());
-    return "error";
-  }}
-function ComponentPet(pet) {
-   /* {} */
+import Grid from "@material-ui/core/Grid";
+
+import { petGetValue } from "./PetData"
+
+function ComponentPet() {
+  /* {} */
+  console.debug("decive_id: " + petGetValue("decive_id"))
   return (
     <div className="Pet">
       <Grid
@@ -32,6 +18,7 @@ function ComponentPet(pet) {
         justifyContent="center"
         alignItems="center"
       >
+        {" "}
         <Grid item xs={4}>
           <center>
             <section id="Pet__Photo">
@@ -48,14 +35,15 @@ function ComponentPet(pet) {
           <center>
             <section id="Pet__Data">
               <h2>
-                Nombre: <span id="Pet__Data__Name">{getConfigKey("name")}</span>
+                Nombre: <span id="Pet__Data__Name">{petGetValue("name")}</span>
               </h2>
               <h3>
-                Peso: <span id="Pet__Data__Weight">10</span> KiloGramos
+                Peso: <span id="Pet__Data__Weight">{petGetValue("weight")}</span>
+                KiloGramos
               </h3>
               <h3>
-                Felicidad: <span id="Pet__Data__Happiness">100</span> Agites de
-                cola (Por Minuto)
+                Felicidad: <span id="Pet__Data__Happiness">{petGetValue("happiness")}</span>
+                Agites de cola(Por Minuto)
               </h3>
             </section>
           </center>
